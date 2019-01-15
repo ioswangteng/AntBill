@@ -1,0 +1,137 @@
+.page{
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  padding-top: 0;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 18rpx 18rpx 18rpx 0;
+  margin-left: 8rpx;
+}
+.header-title{
+  font-size: 30rpx;
+  display: flex;
+  padding-left: 8rpx;
+  text-align: center;
+}
+.image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.list{
+  background-color:white;
+  padding: 0;
+}
+.logoHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.ticketLogo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 88rpx;
+  height: 88rpx;
+  font-size: 24rpx;
+  color: #108ee9;
+  border-color: #108ee9;
+  border-width: 2rpx;
+  border-radius: 50%;
+  border-style: solid;
+  margin-top: 16rpx;
+}
+.logoName{
+  font-size: 36rpx;
+  margin: 8rpx;
+  padding: 8rpx;
+
+}
+.tip{
+  padding-top: 4rpx;
+  border-bottom: 4rpx #eeeeee solid;
+ 
+}
+.ticketTip{
+font-size: 30rpx;
+padding: 8rpx ;
+color: #999999;
+
+}
+.ticketHeadTip{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+ border-bottom: 2rpx #eeeeee solid;
+ padding: 16rpx;
+ color: #999999;
+}
+.commodity{
+  flex: 1;
+}
+.ticketPrice{
+  width: 60px;
+  text-align: center;
+}
+.number{
+width: 60px;
+text-align: center;
+}
+.ticketAll{
+  width: 60px;
+  text-align: right;
+}
+.foldimage{
+width: 24rpx;
+height: 24rpx;
+}
+.foldTitle{
+padding: 8rpx;
+font-size: 24rpx;
+}
+.imgAndFold{
+   font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+ border-bottom: 2rpx #eeeeee solid;
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+  margin-right: 8rpx;
+  padding: 8rpx;
+}
+.bottomclass{
+  display: flex;
+  flex-direction: column;
+}
+.bottomImage{
+  height: 50rpx;
+  width: 100%;
+}
+.bottomTip{
+    align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24rpx;
+  border-top: 2rpx #eeeeee solid;
+  padding-top: 16rpx;
+  color: #b6b6b6;
+  width: 50%;
+  display:block;
+  margin:0 auto;
+
+}
+.bannerview{
+  display: flex;
+  flex-direction: row;
+}
+.bannerBtn{
+  background-color: white;
+  
+}

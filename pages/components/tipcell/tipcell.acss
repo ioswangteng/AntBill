@@ -1,0 +1,6 @@
+.tipcell{
+  text-align: center;
+  font-size: 26rpx;
+  padding: 8rpx;
+  color: #333333;
+}

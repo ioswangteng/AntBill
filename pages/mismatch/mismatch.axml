@@ -1,0 +1,13 @@
+<view class="iconwarn">    
+  <view class="iconclass">
+    <view class="warn-class">
+      <icon type="warn" size="80"/>
+    </view>
+    <view class="text-title">
+      <text class="warn-title">该订单的支付账户和您的不匹配         
+      </text>
+      <text class="warn-title">无法查看购物小票 </text>
+    </view>
+  </view>
+</view>
+</view>

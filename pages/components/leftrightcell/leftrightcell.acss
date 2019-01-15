@@ -1,0 +1,11 @@
+.lrcell{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16rpx;
+  font-size:30rpx;
+  color: #999999;
+}
+.lname{
+  flex: 1;
+}

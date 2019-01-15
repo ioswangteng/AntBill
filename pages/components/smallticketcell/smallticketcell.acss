@@ -1,0 +1,39 @@
+.ticket{
+  flex: 1;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.ticket-title{
+  padding: 20rpx;
+}
+.ticketline{
+  padding: 20rpx;
+  border-bottom: 2rpx #eeeeee solid;
+}
+.titleclass{
+  font-size: 32rpx;
+  flex: 1;
+}
+.ticket-monery{
+  padding: 20rpx;
+}
+.ticket-time{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.monery{
+  font-size: 34rpx;
+  font-weight:bold; 
+}
+.btnview{
+  align-items: center;
+  text-align: center;
+  border-width: 0;
+  font-size: 32rpx;
+  color: #108ee9;
+  margin-right: 8rpx;
+}

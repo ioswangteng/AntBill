@@ -1,0 +1,20 @@
+<block a:if="{{ispayment}}">
+  <view class="lrcell">
+    <view class="lname">
+      <text style="color:black">{{items.title}} 
+      </text>
+    </view>
+    <text style="color:black">{{items.subTitle}}  
+    </text>
+  </view>
+</block>
+<block a:else>
+  <view class="lrcell">
+    <view class="lname">
+      <text style="color:#999999">{{items.title}}     
+      </text>
+    </view>
+    <view>{{items.subTitle}}    
+    </view>
+  </view>
+</block>

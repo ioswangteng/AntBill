@@ -1,0 +1,12 @@
+<view class="list">
+  <view class="ticket-title" >
+    <text class="ticket-header">我的小票    
+    </text>
+    <text class="ticket-num">共<text style="color:red">{{historycounts}}</text>张        
+</text>
+  </view>
+  <block a:for="{{historyItems}}">
+    <smallticketcell onItemTap="onItemTap" item="{{item}}" />
+    <view style="margin-top: 10px;" />
+  </block>
+</view>

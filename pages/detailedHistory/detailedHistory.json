@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "购物小票",
+    "usingComponents":{
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+     "tipcell":"./../components/tipcell/tipcell",
+    "cell":"./../components/leftrightcell/leftrightcell",
+    "drugscell":"./../components/ticketdrugscell/ticketdrugscell"
+  }
+  
+}

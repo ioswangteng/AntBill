@@ -1,0 +1,13 @@
+<view class="drug">
+  <view class="commoditys">
+ 
+<text style="padding:8rpx;">{{item.CODE}}
+</text>
+<text style="padding:8rpx;">{{item.NAME}}
+</text>
+  </view>
+
+ <text class="ticketPrices">{{item.AMOUNT}}</text>
+ <text class="numbers">{{item.COUNT}}</text>
+ <text class="ticketAlls">{{item.PAYAMOUNT}}</text>
+</view>

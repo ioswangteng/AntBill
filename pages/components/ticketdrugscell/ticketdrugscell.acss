@@ -1,0 +1,28 @@
+
+.drug{
+   font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+ border-bottom: 2rpx #eeeeee solid;
+ padding: 16rpx;
+  align-items: center;
+  justify-content: center;
+}
+.commoditys{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+    font-size: 30rpx;
+}
+.ticketPrices{
+  width: 60px;
+  text-align: center;
+}
+.numbers{
+width: 60px;
+text-align: center;
+}
+.ticketAlls{
+  width: 60px;
+  text-align: right;
+}

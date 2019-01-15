@@ -1,0 +1,14 @@
+{
+  "pages": [
+  
+    "pages/history/history",
+     "pages/detailedHistory/detailedHistory",
+     "pages/mismatch/mismatch"
+  
+  ],
+  "window": {
+ 
+    "titleBarColor":"#108ee9",
+    "titleColor":"#ffffff"
+  }
+}

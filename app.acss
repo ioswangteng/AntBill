@@ -1,0 +1,270 @@
+
+page {
+   background-color: #F7F7F7;
+   box-sizing: border-box;
+}
+
+.page {
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 24rpx;
+  padding: 18rpx;
+  flex: 1;
+}
+.banner {
+  height: 455rpx;
+  width: 100%;
+  background-image: url('/image/component_bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 105rpx;
+  height: 117rpx;
+  position: absolute;
+  top: 122rpx;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 46rpx;
+  color: #fff;
+  position: absolute;
+  top: 260rpx;
+  left: 50%;
+  font-weight: bold;
+  transform: translate(-50%);
+}
+
+.sub-title {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 24rpx;
+  position: absolute;
+  top: 330rpx;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.fake-searchbar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 92rpx;
+  width: 91.4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4rpx;
+  box-shadow: rgba(153, 153, 153, 0.24) 0 2px 7px;
+}
+
+.fake-placeholder {
+  margin-left: 12rpx;
+  color: rgba(153, 153, 153, 0.89);
+  font-size: 28rpx;
+}
+
+.hot {
+  padding-top: 60px;
+  padding-bottom: 30rpx;
+  padding-left: 4.26%;
+  padding-right: 4.26%;
+  box-sizing: border-box;
+}
+
+.tabs {
+  height: 92rpx;
+  position: sticky;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.tabs.shadow {
+  box-shadow: rgba(153, 153, 153, 0.24) 0 2px 7px;
+}
+
+.tabs-bar {
+  padding: 0 64rpx;
+  display: flex;
+  height: 100%;
+}
+
+.tabs-bar-tab {
+  bottom: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs-bar-tab {
+  font-size: 32rpx;
+}
+
+.tabs-bar-tab-title {
+  color: #999;
+  padding: 16rpx 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+}
+
+.tabs-bar-tab-title.active {
+  font-weight: bold;
+  color: #1371F7;
+  border-bottom: 3px solid #1371F7;
+}
+
+.component-name {
+  color: rgb(51, 51, 51);
+  margin-right: 10rpx;
+}
+
+.component-brief {
+  color: #CCC;
+  font-size: 34rpx;
+}
+
+.list {
+  padding: 32rpx;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.list-header {
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  font-size: 34rpx;
+  padding-left: 32rpx;
+}
+
+.thumb {
+  height: 60rpx;
+  width: 60rpx;
+  margin-right: 30rpx;
+}
+
+.am-list-header {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.am-list-body {
+  border-top: none;
+}
+
+.list-item {
+  margin-bottom: 35rpx;
+}
+
+.list-wrap {
+  overflow: hidden;
+}
+
+.list-container {
+  display: flex;
+  width: 100%;
+  transition-duration: 500ms;
+}
+
+
+.page-description {
+  margin-bottom: 32rpx;
+}
+
+.page-section {
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+
+.page-section-title {
+  padding: 16rpx 32rpx;
+}
+
+.page-section-demo {
+  padding: 32rpx;
+}
+
+.page-section-btns {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-section-btns > view {
+  flex: 1;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #49a9ee;
+}
+.page-section-btns > view + view {
+  border-left: 1px solid #ddd;
+}
+
+button {
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+}
+
+.bc_blue {
+  background-color: #49A9EE;
+}
+
+.bc_red {
+  background-color: #F04134;
+}
+
+.bc_yellow {
+  background-color: #FFBF00;
+}
+
+.bc_green {
+  background-color: #00A854;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  align-items: center;
+}
+
+.form-row-label {
+  width: 180rpx;
+  font-size: 34rpx;
+  margin-right: 10rpx;
+  text-align: left;
+  color: #000;
+}
+
+.form-row-content {
+  flex: 1;
+  font-size: 34rpx;
+}
+
+.form-line {
+  height: 1px;
+  background-color: #ddd;
+  margin-left: 30rpx;
+}
+

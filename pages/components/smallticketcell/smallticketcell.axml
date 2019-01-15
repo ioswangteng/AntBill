@@ -1,0 +1,18 @@
+<view class="ticket">
+  <view class="ticketline">
+    <text class="titleclass">门店名称：{{item.SHOPNAME}}          
+    </text>
+  </view>
+  <view class="ticket-monery">
+    <text class="titleclass">金额：        
+    </text>
+    <text class="monery">{{item.PAYAMOUNT}}        
+    </text>
+  </view>
+  <view class="ticket-time">
+    <text class="titleclass">交易时间：{{item.CREATEDATE}}         
+    </text>
+    <view class="btnview" onTap="onItemTap" data-code={{item.CODE}} >查看凭证        
+    </view>
+  </view>
+</view>

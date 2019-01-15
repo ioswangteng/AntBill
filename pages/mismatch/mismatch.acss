@@ -1,0 +1,27 @@
+.iconwarn{
+   background-color: #ffffff; 
+}
+.iconclass{
+  display: flex;
+  flex-direction: column;
+}
+.warn-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff; 
+  top: 72rpx;
+  padding-top: 72rpx;
+}
+.warn-title{
+  padding-top: 16rpx;
+   font-size: 32rpx;
+   text-align: center;
+}
+
+.text-title{
+padding: 72rpx;
+text-align: center;
+display: flex;
+flex-direction: column;
+}

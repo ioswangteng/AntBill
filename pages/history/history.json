@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "历史记录",
+  "usingComponents":{
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "smallticketcell":"./../components/smallticketcell/smallticketcell"
+  }
+}
