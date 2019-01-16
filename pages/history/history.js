@@ -1,28 +1,16 @@
 const app = getApp();
-const historyItems = [
-  // {
-  //   SHOPNAME: "雨诺大药房",
-  //   PAYAMOUNT: "65.00",
-  //   CREATEDATE: "2018-12-12 15:59"
-  // },
-  // {
-  //   SHOPNAME: "雨诺大药房李沧分店",
-  //   PAYAMOUNT: "12.00",
-  //   CREATEDATE: "2018-12-12 16:00"
-  // },
-]
+const historyItems = []
 
 Page({
   data: {
     historyItems,
     historycounts: 0,
-
   },
   onLoad() {
     my.showLoading();
     this.getAuthCode();
-
   },
+
   onPullDownRefresh() {
     my.stopPullDownRefresh()
   },
@@ -38,11 +26,9 @@ Page({
     my.getAuthCode({
       scopes: 'auth_user', // 主动授权：auth_user，静默授权：auth_base。或者其它scope
       success: (res) => {
-      console.log("authCode：" + res.authCode);
+        console.log("authCode：" + res.authCode);
         if (res.authCode) {
           that.requestHttp(res.authCode);
-
-          
         }
       },
     });
@@ -51,7 +37,7 @@ Page({
     console.log('{"authCode":"' + authCode + '"}');
     var that = this;
     my.httpRequest({
-      url: app.baseUrl +'getAliOrderList',
+      url: app.baseUrl + 'getAliOrderList',
       method: 'POST',
       data: {
         QueryType: "getAliOrderList",
@@ -59,7 +45,7 @@ Page({
           '{"CODE":"' + authCode + '"}'
       },
       dataType: 'json',
-      success: function(res) {
+      success: function (res) {
         my.hideLoading({
           page: that,  // 防止执行时已经切换到其它页面，page指向不准确
         });
@@ -69,7 +55,7 @@ Page({
         var list = allData.DATA;
 
         if (allData) {
-        
+
           that.setData({
             historycounts: list.length,
             historyItems: list,
@@ -81,12 +67,12 @@ Page({
           // });
         }
       },
-      fail: function(res) {
+      fail: function (res) {
 
         console.log('fail：' + res.data);
         my.alert({ content: JSON.stringify(res) });
       },
-      complete: function(res) {
+      complete: function (res) {
         // my.alert({title: 'complete'});
       }
     });
