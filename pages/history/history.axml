@@ -1,4 +1,7 @@
 <view class="list">
+  <block a:if="{{historycounts!=''}}">
+
+  
   <view class="ticket-title" >
     <text class="ticket-header">我的小票    
     </text>
@@ -8,5 +11,13 @@
   <block a:for="{{historyItems}}">
     <smallticketcell onItemTap="onItemTap" item="{{item}}" />
     <view style="margin-top: 10px;" />
+  </block>
+  </block>
+  <block a:elif="{{historycounts==''}}">
+ <page-result
+    type="empty"
+    title="{{errorResult}}"
+  >
+  </page-result>
   </block>
 </view>

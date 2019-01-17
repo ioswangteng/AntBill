@@ -5,7 +5,8 @@
     "list-item": "mini-antui/es/list/list-item/index",
      "tipcell":"./../components/tipcell/tipcell",
     "cell":"./../components/leftrightcell/leftrightcell",
-    "drugscell":"./../components/ticketdrugscell/ticketdrugscell"
+    "drugscell":"./../components/ticketdrugscell/ticketdrugscell",
+    "page-result": "mini-antui/es/page-result/index"
   }
   
 }

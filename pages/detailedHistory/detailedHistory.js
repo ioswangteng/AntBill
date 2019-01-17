@@ -2,9 +2,10 @@ const app = getApp();
 
 Page({
   data: {
+    authUserCode: "",
     allData: [],
-    commodityItems: [
-    ],
+    commodityItems: [],
+    errorResult: "",
     ishidden: false,
     detailItems: [],
     cashier: {
@@ -26,13 +27,21 @@ Page({
     }],
   },
   onLoad(options) {
+    my.showLoading({
+      content: '加载中...',
+    });
     console.log("kkkkk" + options.code)
-    this.requestHttp(options.code);
+    var code = "20181219154010479";
+    this.getAuthCode(code);
+  },
+  onPullDownRefresh() {
+    my.stopPullDownRefresh()
   },
   //头部历史记录的点击方法
   tapheader() {
+
     my.navigateTo({
-      url: '../history/history',
+      url: '../history/history?usrid=' + this.data.authUserCode,
     });
   },
   //折叠点击方法
@@ -67,35 +76,70 @@ Page({
       })
     }
   },
-  requestHttp(code) {
-    var  code ="20181219154010479";
-    if (code) {
+  getAuthCode(code) {
+    var that = this;
+    my.getAuthCode({
+      scopes: 'auth_user', // 主动授权：auth_user，静默授权：auth_base。或者其它scope
+      success: (res) => {
+        console.log("authCode：" + res.authCode);
+        if (res.authCode) {
+          that.requestHttp(res.authCode, code);
+        }
+      },
+    });
+  },
+  requestHttp(usercode, code) {
+    if (usercode && code) {
       console.log("code" + code)
       var that = this;
       my.httpRequest({
-        url: app.baseUrl+'getOrderInfo',
+        url: app.baseUrl + 'getOrderInfo',
         method: 'POST',
         data: {
           QueryType: "getOrderInfo",
           Params:
             // '{"CODE":"20181219154010479"}'
-            '{"CODE":"' + code + '"}'
+            '{"CODE":"' + code + '","USERCODE":"' + usercode + '"}'
         },
         dataType: 'json',
-        success: function(res) {
-
-          var lists = res.data.DATA;
+        timeout: 3000,
+        success: function (res) {
+          my.hideLoading({
+            page: that,  // 防止执行时已经切换到其它页面，page指向不准确
+          });
+          if (res.data.DATA.CODE != "0000") {
+            // my.alert({ content: res.data.DATA.MSG });
+            that.setData({
+              errorResult: res.data.DATA.MSG,
+            });
+          }
+          //  var userid = "2088502717233006";
+          var lists = res.data.DATA.DATA;
+          console.log("KKKKKKKK" + res.data.DATA.MSG)
           that.setData({
+            authUserCode: res.data.DATA.USERID,
             allData: lists,
             commodityItems: res.data.DATA.GOODS
           });
           that.delaDiscount(res.data.DATA.OEDER);
         },
-        fail: function(res) {
-          my.alert({ content: JSON.stringify(res) });
+        fail: function (res) {
+          my.hideLoading({
+            page: that,  // 防止执行时已经切换到其它页面，page指向不准确
+          });
+          if (res.error) {
+            that.setData({
+              errorResult: "异常错误码：" + res.error,
+            });
+          }
         },
-        complete: function(res) {
+        complete: function (res) {
+
         }
+      });
+    } else {
+      that.setData({
+        errorResult: "缺少参数",
       });
     }
   },

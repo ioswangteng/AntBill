@@ -3,6 +3,7 @@
   "usingComponents":{
     "list": "mini-antui/es/list/index",
     "list-item": "mini-antui/es/list/list-item/index",
-    "smallticketcell":"./../components/smallticketcell/smallticketcell"
+    "smallticketcell":"./../components/smallticketcell/smallticketcell",
+    "page-result": "mini-antui/es/page-result/index"
   }
 }

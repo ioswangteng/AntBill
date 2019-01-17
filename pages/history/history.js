@@ -5,10 +5,15 @@ Page({
   data: {
     historyItems,
     historycounts: 0,
+    errorResult: "",
   },
-  onLoad() {
-    my.showLoading();
-    this.getAuthCode();
+  onLoad(option) {
+    console.log(option.usrid);
+    var usercode = "2088502717233006";
+    my.showLoading({
+      content: '加载中...',
+    });
+    this.requestHttp(usercode);
   },
 
   onPullDownRefresh() {
@@ -21,20 +26,9 @@ Page({
       url: '../detailedHistory/detailedHistory?code=' + e.code,
     });
   },
-  getAuthCode() {
-    var that = this;
-    my.getAuthCode({
-      scopes: 'auth_user', // 主动授权：auth_user，静默授权：auth_base。或者其它scope
-      success: (res) => {
-        console.log("authCode：" + res.authCode);
-        if (res.authCode) {
-          that.requestHttp(res.authCode);
-        }
-      },
-    });
-  },
-  requestHttp(authCode) {
-    console.log('{"authCode":"' + authCode + '"}');
+
+  requestHttp(userid) {
+    console.log('{"userid":"' + userid + '"}');
     var that = this;
     my.httpRequest({
       url: app.baseUrl + 'getAliOrderList',
@@ -42,41 +36,42 @@ Page({
       data: {
         QueryType: "getAliOrderList",
         Params:
-          '{"CODE":"' + authCode + '"}'
+          '{"USERID":"' + userid + '"}'
       },
       dataType: 'json',
+      timeout: 3000,
       success: function (res) {
         my.hideLoading({
           page: that,  // 防止执行时已经切换到其它页面，page指向不准确
         });
         var allData = res.data.DATA;
         console.log('allData:' + JSON.stringify(allData));
-        // console.log('successUSER_ID:' + allData.USER_ID);
         var list = allData.DATA;
 
-        if (allData) {
-
+        if (list.length != 0) {
           that.setData({
             historycounts: list.length,
             historyItems: list,
           });
         } else {
-          // that.setData({
-          //   historycounts: historyItems.length,
-          //   historyItems: historyItems,
-          // });
+          that.setData({
+            errorResult: "暂无历史记录",
+          });
         }
       },
       fail: function (res) {
-
-        console.log('fail：' + res.data);
-        my.alert({ content: JSON.stringify(res) });
+        my.hideLoading({
+          page: that,  // 防止执行时已经切换到其它页面，page指向不准确
+        });
+        if (res.error) {
+          that.setData({
+            errorResult: "异常错误码：" + res.error,
+          });
+        }
       },
       complete: function (res) {
         // my.alert({title: 'complete'});
       }
     });
   },
-
-
 });
