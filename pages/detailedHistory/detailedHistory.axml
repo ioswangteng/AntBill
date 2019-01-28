@@ -1,5 +1,5 @@
 <view class="page">
-  <block a:if="{{allData!=''}}">
+  <block a:if="{{allData !=''}}">
     <view class="header" onTap="tapheader">
       <image class="image" mode="aspectFit" src="../../image/history.png" />
       <view class="header-title">历史记录                                                                              
@@ -58,11 +58,11 @@
     </view>
     <image class="bottomImage" src="../../image/bottomStyle.png" />
     <!-- </view> -->
-    <view class="bannerview" hidden="{{ishidden}}">
+    <!-- <view class="bannerview" hidden="{{ishidden}}">
       <image src="" mode="" style="background-color: yellow; width: 100%; height:64rpx;flex:1;"/>
       <view class="bannerBtn" onTap="hiddenImage">关闭                        
       </view>
-    </view>
+    </view> -->
   </block>
   <block a:elif="{{allData==''}}">
     <page-result

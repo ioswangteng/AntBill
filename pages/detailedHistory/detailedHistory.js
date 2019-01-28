@@ -30,9 +30,16 @@ Page({
     my.showLoading({
       content: '加载中...',
     });
-    console.log("kkkkk" + options.code)
-    var code = "20181219154010479";
-    this.getAuthCode(code);
+    var qrCode = app.qrCode;
+    console.log("this.qrCode：" + qrCode);
+    if (qrCode) {
+      this.getAuthCode(qrCode);
+    } else {
+      // my.navigateTo({
+      //   url: '../history/history?usrid=' + this.data.authUserCode,
+      // });
+    }
+ 
   },
   onPullDownRefresh() {
     my.stopPullDownRefresh()
@@ -89,9 +96,10 @@ Page({
     });
   },
   requestHttp(usercode, code) {
+    var that = this;
     if (usercode && code) {
-      console.log("code" + code)
-      var that = this;
+      // console.log("qrCode" + code)
+      var jsonData='{"QRCODE":"' + encodeURI(code) + '","USERCODE":"' + usercode + '"}';
       my.httpRequest({
         url: app.baseUrl + 'getOrderInfo',
         method: 'POST',
@@ -99,7 +107,7 @@ Page({
           QueryType: "getOrderInfo",
           Params:
             // '{"CODE":"20181219154010479"}'
-            '{"CODE":"' + code + '","USERCODE":"' + usercode + '"}'
+           jsonData,
         },
         dataType: 'json',
         timeout: 3000,
@@ -119,9 +127,9 @@ Page({
           that.setData({
             authUserCode: res.data.DATA.USERID,
             allData: lists,
-            commodityItems: res.data.DATA.GOODS
+            commodityItems: res.data.DATA.DATA.GOODS
           });
-          that.delaDiscount(res.data.DATA.OEDER);
+          that.delaDiscount(res.data.DATA.DATA.OEDER);
         },
         fail: function (res) {
           my.hideLoading({
@@ -138,6 +146,10 @@ Page({
         }
       });
     } else {
+      var that = this;
+      my.hideLoading({
+        page: that,  // 防止执行时已经切换到其它页面，page指向不准确
+      });
       that.setData({
         errorResult: "缺少参数",
       });

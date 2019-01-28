@@ -1,8 +1,7 @@
 {
   "pages": [
-   
+    "pages/detailedHistory/detailedHistory",
     "pages/history/history",
-      "pages/detailedHistory/detailedHistory",
      "pages/mismatch/mismatch"
   
   ],
