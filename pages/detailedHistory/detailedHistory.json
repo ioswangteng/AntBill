@@ -1,5 +1,5 @@
 {
-  "defaultTitle": "购物小票",
+  "defaultTitle": "",
     "usingComponents":{
     "list": "mini-antui/es/list/index",
     "list-item": "mini-antui/es/list/list-item/index",

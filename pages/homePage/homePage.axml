@@ -1,0 +1,14 @@
+
+  <view class="homeclass">
+    <view class="image_class">
+      <image class="backgroundImage" src="../../image/smallTicket.png" />
+    </view>
+    <view class="button" onTap="onClickTap">查询小票               
+    </view>
+    <view class="tipclass">
+      <view class="support">  技术支持        
+      </view>
+      <view class="support">  青岛雨诺网络信息股份有限公司        
+      </view>
+    </view>
+  </view>

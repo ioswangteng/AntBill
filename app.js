@@ -1,5 +1,5 @@
 App({
-  baseUrl: "http://selfbuy.yy365.cn/AppHandle?h=",
+  baseUrl: "https://selfbuy.yy365.cn/AppHandle",
   qrCode:"",
   onLaunch(options) {
     // 第一次打开

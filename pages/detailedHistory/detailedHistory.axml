@@ -49,12 +49,17 @@
           </text>
         </view>
       </view>
-      <!-- <cell items="{{cashier}}" />                                        -->
-      <block a:for="{{footerItems}}">
-        <tipcell title="{{item.title}}"/>
-      </block>
-      <view class="bottomTip">感谢惠顾，祝早日康复                                                  
+      <block a:for="{{allData.SHOPINFO}}">
+        <tipcell title="{{item.ADDRESS}}"/>
+        <tipcell title="{{item.TELPHONE}}"/>
+         <view class="bottomTip">{{item.DETAIL}}                                      
       </view>
+      </block>
+      <!-- <cell items="{{cashier}}" />                                        -->
+      <!-- <block a:for="{{footerItems}}">
+        <tipcell title="{{item.address}}"/>
+        <tipcell title="{{item.telphone}}"/>
+      </block> --> 
     </view>
     <image class="bottomImage" src="../../image/bottomStyle.png" />
     <!-- </view> -->

@@ -3,19 +3,24 @@ const historyItems = []
 
 Page({
   data: {
+   
     historyItems,
     historycounts: 0,
     errorResult: "",
   },
   onLoad(option) {
-    console.log(option.usrid);
-    var usercode = "2088502717233006";
+    console.log("123123|@", JSON.stringify(option));
+    var usercode = option.usrid;//"2088502717233006";
     my.showLoading({
       content: '加载中...',
     });
     this.requestHttp(usercode);
   },
-
+  onReady() {
+    if (my.canIUse('hideBackHome')) {
+      my.hideBackHome();
+    }
+  },
   onPullDownRefresh() {
     my.stopPullDownRefresh()
   },
@@ -31,7 +36,7 @@ Page({
     console.log('{"userid":"' + userid + '"}');
     var that = this;
     my.httpRequest({
-      url: app.baseUrl + 'getAliOrderList',
+      url: app.baseUrl,
       method: 'POST',
       data: {
         QueryType: "getAliOrderList",
@@ -65,7 +70,7 @@ Page({
         });
         if (res.error) {
           that.setData({
-            errorResult: "异常错误码：" + res.error,
+            errorResult: "异常错误码：" + JSON.stringify(res),//res.error
           });
         }
       },

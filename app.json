@@ -1,13 +1,13 @@
 {
   "pages": [
+     "pages/homePage/homePage",
     "pages/detailedHistory/detailedHistory",
     "pages/history/history",
-     "pages/mismatch/mismatch"
-  
+    "pages/mismatch/mismatch"
+   
   ],
   "window": {
- 
-    "titleBarColor":"#108ee9",
-    "titleColor":"#ffffff"
+    "titleBarColor": "#108ee9",
+    "titleColor": "#ffffff"
   }
 }
