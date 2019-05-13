@@ -10,7 +10,8 @@ Page({
   },
   onLoad(option) {
     console.log("123123|@", JSON.stringify(option));
-    var usercode = option.usrid;//"2088502717233006";
+    // var usercode = option.usrid;//"2088502717233006";
+    var usercode = "2088502717233006";
     my.showLoading({
       content: '加载中...',
     });
